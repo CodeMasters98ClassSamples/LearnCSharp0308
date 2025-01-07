@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LearnCSharp0308.Models;
 
 namespace LearnCSharp0308
 {
-    internal class Student
+    public class Student : User
     {
+        public string LastEducationLevel { get; set; }
     }
 }

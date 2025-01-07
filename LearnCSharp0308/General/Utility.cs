@@ -77,7 +77,7 @@
         }
 
         //ورودی دارد اما خروجی ندارد
-        public static void ShowWarmWellcomeMessage(string name)
+        public static void ShowWarmWellcomeMessage(string name = null)
         {
             Console.WriteLine($"Wellcome {name}.......");
         }
@@ -88,7 +88,32 @@
             return "Wellcome......";
         }
 
+        //Version 1
+        //while (true)
+        //{
+        //    Console.WriteLine("Please enter your phonenumber?");
+        //    phoneNumber = Console.ReadLine() ?? string.Empty;
+        //    bool isValid = IsValidMobileNumber(phoneNumber);
+        //    if (isValid)
+        //    {
+        //        break;
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Please Eneter Valid mobile");
+        //    }
+        //}
 
+        //Version 2
+        //while (true)
+        //{
+        //    Console.WriteLine("Please enter your phonenumber?");
+        //    phoneNumber = Console.ReadLine() ?? string.Empty;
+        //    if (IsValidMobileNumber(phoneNumber))
+        //        break;
+        //    else
+        //        Console.WriteLine("Please Eneter Valid mobile");
+        //}
 
     }
 }

@@ -1,9 +1,11 @@
 ﻿using LearnCSharp0308.General;
+using LearnCSharp0308.Models;
 
 namespace LearnCSharp0308
 {
 
     //Comment کامنت
+    // User Define Datatype
     //Container for peoprties(data) and methods
     //Proprty , Method
     //Private, Public, internal -> Access Modifier
@@ -13,57 +15,40 @@ namespace LearnCSharp0308
 
         static void Main(string[] args)
         {
-            string phoneNumber = string.Empty;
-            Utility.IsValidMobileNumber(phoneNumber);
-            //Version 1
-            //while (true)
-            //{
-            //    Console.WriteLine("Please enter your phonenumber?");
-            //    phoneNumber = Console.ReadLine() ?? string.Empty;
-            //    bool isValid = IsValidMobileNumber(phoneNumber);
-            //    if (isValid)
-            //    {
-            //        break;
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("Please Eneter Valid mobile");
-            //    }
-            //}
+            AdminUser adminUser = new AdminUser();
 
-            //Version 2
-            //while (true)
-            //{
-            //    Console.WriteLine("Please enter your phonenumber?");
-            //    phoneNumber = Console.ReadLine() ?? string.Empty;
-            //    if (IsValidMobileNumber(phoneNumber))
-            //        break;
-            //    else
-            //        Console.WriteLine("Please Eneter Valid mobile");
-            //}
+            string ValidUsername = "admin";
+            string ValidPassword = "123";
 
-            //Version 3
             do
             {
-                Console.WriteLine("Please enter your phonenumber?");
-                phoneNumber = Console.ReadLine() ?? string.Empty;
-                if (Utility.IsValidMobileNumber(phoneNumber))
+                Console.WriteLine(CustomMessage.GetUsername);
+                string username = Console.ReadLine() ?? string.Empty;
+
+                Console.WriteLine(CustomMessage.GetPassword);
+                string password = Console.ReadLine() ?? string.Empty;
+
+                if (username == ValidUsername && password == ValidPassword)
                     break;
                 else
-                    Console.WriteLine("Please Eneter Valid mobile");
+                    Console.WriteLine(CustomMessage.PleaseEnterValidData);
             } while (true);
 
+            Utility.ShowWarmWellcomeMessage();
 
-            Utility.ShowWarmWellcomeMessage("Parham");
-            string wellComeMessage = Utility.GetWellComeMessage();
-            int res = Utility.Add(x: 15, y: 25);
+            Student student = new Student();
+            Console.WriteLine("Please enter your FirstName?");
+            do
+            {
+                Console.WriteLine(CustomMessage.GetFirstName);
+                student.FirstName = Console.ReadLine() ?? string.Empty;
+                if (!string.IsNullOrEmpty(student.FirstName))
+                    break;
+                else
+                    Console.WriteLine("Please Eneter Valid FirstName");
+            } while (true);
 
-            Console.WriteLine("Please enter your username?");
-            string username = Console.ReadLine();
-            Console.WriteLine("Please enter your password?");
-            string password = Console.ReadLine();
-
-            Console.WriteLine("You entered username: " + username + " and password: " + password);
+            
             Console.ResetColor();
         }
     }
